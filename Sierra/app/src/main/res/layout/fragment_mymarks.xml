@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:table="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/fragment_padding"
+        android:weightSum="1"
+        tools:context="com.koalait.sierra.fragments.DashboardFragment"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:text="@string/title_mymarks"
+            android:textSize="@dimen/fragment_title" />
+
+        <GridView
+            android:id="@+id/grid_marks"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:drawSelectorOnTop="true"
+            android:gravity="center"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            android:focusable="true"
+            android:clickable="true">
+        </GridView>
+
+
+    </LinearLayout>
+</layout>

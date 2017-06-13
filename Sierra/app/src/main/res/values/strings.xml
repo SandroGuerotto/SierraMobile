@@ -2,12 +2,14 @@
     <string name="app_name">Sierra</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_settings">Settings</string>
-    <string name="title_schedule">Schedule</string>
+    <string name="title_notifications">Benachrichtigung</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="title_schedule">Stundenplan</string>
     <string name="title_news">News</string>
-    <string name="title_mywork">My Homework</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_mywork">Hausaufgaben</string>
+    <string name="title_mymarks">Noten</string>
+    <string name="title_for_tomorrow">Hausaufgaben auf morgen</string>
+    <string name="title_next_Lesson">Nächste Lektion</string>
+    <string name="nextLesson">Die nächste %1$s Lektion startet um 10:00 im Zimmer %2$d</string>
+    <string name="login">einloggen</string>
 </resources>
