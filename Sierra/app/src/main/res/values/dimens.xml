@@ -4,5 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fragment_title">20dp</dimen>
     <dimen name="fragment_padding">16dp</dimen>
+    <dimen name="fragment_list_item">10dp</dimen>
     <dimen name="fragment_divider">1dp</dimen>
 </resources>

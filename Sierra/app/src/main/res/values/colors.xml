@@ -8,7 +8,10 @@
     <color name="white">#FFFFFF</color>
 
     <color name="mathe">#17BEBB</color>
-    <color name="german">#D81E5B</color>
+    <color name="german">#E5F9E0</color>
     <color name="french">#F85A3E</color>
     <color name="sport">#FCF6B1</color>
+    <color name="physic">#009FB7</color>
+    <color name="chemie">#FCAA67</color>
+    <color name="economie">#A9E5BB</color>
 </resources>

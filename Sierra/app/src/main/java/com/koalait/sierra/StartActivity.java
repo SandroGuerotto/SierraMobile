@@ -6,24 +6,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.koalait.sierra.login.LoginActivity;
+import com.koalait.sierra.login.SaveSharedPreference;
 
 public class StartActivity extends AppCompatActivity {
 
-    private static final String TAG = "StartActivity";
     public static final int GOTO_MAIN = 3;
     public static final boolean debug = true;
+    private static final String TAG = "StartActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (debug){
+        if (SaveSharedPreference.getUserName(StartActivity.this).length() == 0) {
+            // call Login Activity
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivityForResult(intent, GOTO_MAIN);
+        } else {
+            // Stay at the current activity.
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             this.finish();
-        }else {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivityForResult(intent, GOTO_MAIN);
         }
+
+//        if (debug){
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+//            this.finish();
+//        }else {
+//            Intent intent = new Intent(this, LoginActivity.class);
+//            startActivityForResult(intent, GOTO_MAIN);
+//        }
 
         return;
     }

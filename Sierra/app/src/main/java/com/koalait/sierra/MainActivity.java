@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     public final Context context = this;
-    BottomNavigationView navigation = null;
     public Model model;
-
+    BottomNavigationView navigation = null;
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener
             = item -> {
                 Fragment fragment = null;
+
                 switch (item.getItemId()) {
                     case R.id.navigation_dashboard:
                         fragment = new DashboardFragment();
@@ -73,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
                     R.id.fragmentContainer, fragment)
                     .commit();
             Log.println(Log.DEBUG, TAG, "click " + item.getTitle());
-            // reset bottom navigation
-//            navigation.setSelectedItemId(R.id.navigation_dashboard);
             return true;
         }else{
             return false;
@@ -93,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         //get navigation
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
         // set first display on dashboard
         navigation.setSelectedItemId(R.id.navigation_dashboard);
