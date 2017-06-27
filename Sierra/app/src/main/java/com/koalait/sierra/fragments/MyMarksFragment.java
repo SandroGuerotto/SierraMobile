@@ -53,7 +53,6 @@ public class MyMarksFragment extends Fragment {
 
     // The method that displays the popup.
     private void showPopup(View view, SubjectMark subjectMark) {
-        int popupWidth = 800;
         int popupHeight = 1200;
 
         // Inflate the popup_layout.xml
@@ -71,7 +70,6 @@ public class MyMarksFragment extends Fragment {
         popup.setHeight(popupHeight);
         popup.setFocusable(true);
         popup.setBackgroundDrawable(null);
-//        popup.set
 
         // Some offset to align the popup a bit to the right, and a bit down, relative to button's position.
         int OFFSET_X = 50;
@@ -79,14 +77,11 @@ public class MyMarksFragment extends Fragment {
 
         TextView tv = (TextView) layout.findViewById(R.id.popup_title);
         tv.setText(subjectMark.getName());
-//        tv.setBackgroundColor(subjectMark.getColor());
+
         MarkListAdapter adapter = new MarkListAdapter(view.getContext(), android.R.layout.simple_list_item_1, subjectMark.getMarks());
         ListView lv_marks = (ListView) layout.findViewById(R.id.listView_marks);
         lv_marks.setAdapter(adapter);
-//        lv_marks.setBackgroundColor(subjectMark.getColor());
 
-
-//        popup.getContentView().setBackgroundColor(subjectMark.getColor());
         popup.setContentView(layout);
         // Displaying the popup at the specified location, + offsets.
         popup.showAtLocation(layout, Gravity.NO_GRAVITY, OFFSET_X, OFFSET_Y);

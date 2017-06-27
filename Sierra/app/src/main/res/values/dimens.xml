@@ -6,4 +6,5 @@
     <dimen name="fragment_padding">16dp</dimen>
     <dimen name="fragment_list_item">10dp</dimen>
     <dimen name="fragment_divider">1dp</dimen>
+    <dimen name="grid_width">53dp</dimen>
 </resources>

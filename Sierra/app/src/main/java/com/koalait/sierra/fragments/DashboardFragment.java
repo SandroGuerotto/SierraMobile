@@ -39,7 +39,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Binding klasse setzten
-        FragmentDashboardBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container , false);
+        FragmentDashboardBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false);
         // Inflate the layout for this fragment
         View view = binding.getRoot();
 
@@ -62,11 +62,7 @@ public class DashboardFragment extends Fragment {
         expandableListAdapter = new CustomExpandableListAdapter(getContext(), expandableListTitle, expandableListDetail);
         lv_news.setAdapter(expandableListAdapter);
 
-
         binding.setModel(Model.getInstance());
-
-        // Test lambda
-//        lv_work.setOnGroupExpandListener(groupPosition -> user.setLastName(expandableListTitle.get(groupPosition)));
 
         return view;
     }

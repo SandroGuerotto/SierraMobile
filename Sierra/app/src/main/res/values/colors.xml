@@ -6,12 +6,20 @@
     <color name="colorGray">#4d4d4d</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
+    <item name="transparent" type="color">#00FFFFFF</item>
+
 
     <color name="mathe">#17BEBB</color>
     <color name="german">#E5F9E0</color>
     <color name="french">#F85A3E</color>
     <color name="sport">#FCF6B1</color>
     <color name="physic">#009FB7</color>
-    <color name="chemie">#FCAA67</color>
-    <color name="economie">#A9E5BB</color>
+    <color name="chemistry">#FCAA67</color>
+    <color name="economy">#A9E5BB</color>
+    <color name="biology">#A1CDA8</color>
+    <color name="history">#AD9BAA</color>
+    <color name="handcraft">#247BA0</color>
+    <color name="music">#FF1654</color>
+    <color name="geography">#02C39A</color>
+    <color name="english">#CEE8D6</color>
 </resources>

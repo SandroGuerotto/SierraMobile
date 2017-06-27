@@ -11,7 +11,7 @@
     <string name="title_mymarks">Noten</string>
     <string name="title_for_tomorrow">Hausaufgaben auf morgen</string>
     <string name="title_next_Lesson">Nächste Lektion</string>
-    <string name="nextLesson">Die nächste %1$s Lektion startet um 10:00 im Zimmer %2$d</string>
+    <string name="nextLesson">Die nächste %1$s Lektion startet um 10:10 im Zimmer %2$d</string>
     <string name="login">einloggen</string>
     <string name="title_logindata">Login Daten</string>
 </resources>
