@@ -3,16 +3,17 @@ package com.koalait.sierra.fragments;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
-import com.koalait.sierra.ExpandableListDataPump;
 import com.koalait.sierra.ListAdapter.CustomExpandableListAdapter;
 import com.koalait.sierra.R;
 import com.koalait.sierra.databinding.FragmentDashboardBinding;
+import com.koalait.sierra.model.ExpandableListDataPump;
 import com.koalait.sierra.model.Model;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class DashboardFragment extends Fragment {
     private List<String> expandableListTitle;
     private HashMap<String, List<String>> expandableListDetail;
 
+    private SwipeRefreshLayout swipeContainer;
 
     public DashboardFragment() {
 
@@ -64,8 +66,30 @@ public class DashboardFragment extends Fragment {
 
         binding.setModel(Model.getInstance());
 
+        // Lookup the swipe container view
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh2);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(() -> {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+//            fetchTimelineAsync();
+            Model.getInstance().setNextLesson(getString(R.string.nextLesson, "Französisch", 350));
+            swipeContainer.setRefreshing(false);
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(R.color.colorAccent);
+
         return view;
     }
 
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (swipeContainer != null) {
+            swipeContainer.setRefreshing(false);
+            swipeContainer.destroyDrawingCache();
+            swipeContainer.clearAnimation();
+        }
+    }
 }

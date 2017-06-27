@@ -1,4 +1,4 @@
-package com.koalait.sierra;
+package com.koalait.sierra.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

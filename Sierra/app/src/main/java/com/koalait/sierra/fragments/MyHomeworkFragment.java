@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
-import com.koalait.sierra.ExpandableListDataPump;
 import com.koalait.sierra.ListAdapter.CustomExpandableListAdapter;
 import com.koalait.sierra.R;
+import com.koalait.sierra.model.ExpandableListDataPump;
 
 import java.util.ArrayList;
 import java.util.HashMap;

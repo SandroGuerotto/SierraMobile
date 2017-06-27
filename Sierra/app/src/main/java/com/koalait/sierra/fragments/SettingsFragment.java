@@ -47,14 +47,11 @@ public class SettingsFragment extends Fragment {
         // Lookup the swipe container view
         swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
         // Setup refresh listener which triggers new data loading
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                // Your code to refresh the list here.
-                // Make sure you call swipeContainer.setRefreshing(false)
-                // once the network request has completed successfully.
-                fetchTimelineAsync();
-            }
+        swipeContainer.setOnRefreshListener(() -> {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+            fetchTimelineAsync();
         });
         // Configure the refreshing colors
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
@@ -84,5 +81,15 @@ public class SettingsFragment extends Fragment {
         Log.println(Log.DEBUG, TAG, "logout");
         SaveSharedPreference.clearUserName(this.getContext());
         getActivity().finish();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (swipeContainer != null) {
+            swipeContainer.setRefreshing(false);
+            swipeContainer.destroyDrawingCache();
+            swipeContainer.clearAnimation();
+        }
     }
 }
